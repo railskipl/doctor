@@ -2,7 +2,8 @@
 <html>
 <head>
   <%= stylesheet_link_tag    "application" %>
-<%= javascript_include_tag 'application','jquery', 'nested_form' %>
+<%= javascript_include_tag 'jquery', 'nested_form' %>
+<%= javascript_include_tag 'application'%>
 
     <%= csrf_meta_tag %>
     <%= yield :javascript %>
