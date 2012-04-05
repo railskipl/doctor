@@ -1,0 +1,19 @@
+<h1>Welcome To The Doctors Portal</h1>
+   <p>
+   	Patients:
+      <% @patients.each do |patient| %>
+        <%= link_to "#{patient.name}", {:action=>"show", :controller=>"patients", :id => patient.user_id} %>
+      <% end %>
+   </p>
+   <p>
+   	Doctors:
+      <% @vaidyas.each do |doctor| %>
+        <%= link_to "#{doctor.name}", {:action=>"show", :controller=>"vaidyas", :id => doctor.user_id} %>
+      <% end %>
+   </p>
+   <p>
+   	Hospitals:
+      <% @hospitals.each do |hospital| %>
+        <%= link_to "#{hospital.name}", {:action=>"show", :controller=>"hospitals", :id => hospital.user_id} %>
+      <% end %>
+   </p>

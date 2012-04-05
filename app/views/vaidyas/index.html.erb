@@ -1,0 +1,11 @@
+<h1>Welcome Doctor </h1>(<%= current_user.email %>)
+<p><b><%= link_to 'My Profile', {:action=>"show", :controller=>"vaidyas", :id=>"#{current_user.id}"} %></b>
+<b><%= link_to 'Edit My Profile',    {:action=>"edit", :controller=>"vaidyas", :id=>"#{current_user.id}"} %></b></p>
+<p>
+   	List Of Doctors:
+      <% @vaidyas.each do |doctor| %>
+        <%= link_to "#{doctor.name}", {:action=>"show", :controller=>"vaidyas", :id => doctor.user_id} %>
+      <% end %>
+   </p>
+   <p>
+  

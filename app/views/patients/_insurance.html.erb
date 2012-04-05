@@ -1,0 +1,34 @@
+ <%= f.label       :type_insurance %><br />
+ <%= f.text_field  :type_insurance %><br />
+ 
+ <%= f.label       :comp_name %><br />
+ <%= f.text_field  :comp_name %><br />
+ 
+ <%= f.label       :plan_name %><br />
+ <%= f.text_field  :plan_name %><br />
+ 
+ <%= f.label       :plan_id %><br />
+ <%= f.text_field  :plan_id %><br />
+ 
+ <%= f.label       :group_no %><br />
+ <%= f.text_field  :group_no %><br />
+ 
+ <%= f.label       :card_name %><br />
+ <%= f.text_field  :card_name %><br />
+ 
+ <%= f.label       :policy_id %><br />
+ <%= f.text_field  :policy_id %><br />
+ 
+ <%= f.label       :insure_phone %><br />
+ <%= f.text_field  :insure_phone %><br />
+ 
+ <%= f.label       :start_date %><br />
+ <%= f.date_select :start_date %><br />
+ 
+ <%= f.label       :end_date %><br />
+ <%= f.date_select :end_date %><br />
+ 
+ <%= f.label       :journal_entry %><br />
+ <%= f.text_area   :journal_entry %><br />
+ 
+ <%= f.hidden_field :user_id, :value => current_user.id %>

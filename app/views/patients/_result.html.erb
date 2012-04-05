@@ -1,0 +1,22 @@
+ <%= f.label       :test_name %><br />
+ <%= f.text_field  :test_name %><br />
+ 
+ <%= f.label       :final_result %><br />
+ <%= f.text_field  :final_result %><br />
+ 
+ <%= f.label       :unit %><br />
+ <%= f.text_field  :unit %><br />
+ 
+ <%= f.label       :date_test %><br />
+ <%= f.date_select :date_test %><br />
+ 
+ <%= f.label       :goal %><br />
+ <%= f.text_field  :goal %><br />
+ 
+ <%= f.label       :per_entry %><br />
+ <%= f.text_field  :per_entry %><br />
+ 
+ <%= f.label       :journal_entry %><br />
+ <%= f.text_area   :journal_entry %><br />
+ 
+ <%= f.hidden_field :user_id, :value => current_user.id %>

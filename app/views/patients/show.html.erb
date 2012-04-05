@@ -1,0 +1,43 @@
+<h1>Patient Profile</h1>
+<p><b>Name:</b>
+<%= @patient.name %>
+</p>
+<b>Phone Number:</b>
+<%= @patient.phone %>
+</p></br>
+<p><b>Address:</b></br>
+	<%= @patient.address_line_1 %></br>
+	<%= @patient.address_line_2 %></br>
+	<%= @patient.address_line_3 %></br>
+</p></br>
+<b>Suffering From:</b>
+<%= @patient.suffering_from %>
+</p>
+
+   <% if @patient.allergies != nil %>
+   <%= render 'patients/showp/sallergy' %> 
+   <% end %>
+  
+   <% if @patient.immunizations != nil %>
+   <%= render 'patients/showp/simmu' %> 
+   <% end %>
+   
+   <% if @patient.insurances != nil %>
+   <%= render 'patients/showp/sinsu' %> 
+   <% end %>
+   
+   <% if @patient.medications != nil %>
+   <%= render 'patients/showp/smedi' %> 
+   <% end %>
+   
+   <% if @patient.problems != nil %>
+   <%= render 'patients/showp/sprob' %> 
+   <% end %>
+   
+   <% if @patient.procedures != nil %>
+   <%= render 'patients/showp/sproc' %> 
+   <% end %>
+   
+   <% if @patient.results != nil %>
+   <%= render 'patients/showp/sres' %> 
+   <% end %>

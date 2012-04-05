@@ -1,0 +1,42 @@
+<h1>Hospital <%= @hospital.name %></h1>
+<p>
+<b>Name:</b>
+<%= @hospital.name %>
+</p>
+<p><b>Address:</b>
+	<%= @hospital.address_line_1 %></br>
+	<%= @hospital.address_line_2 %></br>
+	<%= @hospital.address_line_3 %></br>
+</p>
+<p><b>Emergency Services:</b>
+	<%= @hospital.emergency_services %>
+</p>
+<p><b>Ambulance Contact:</b>
+	<%= @hospital.ambulance_contact %>
+</p>
+<p><b>Pharmacy Details:</b>
+	<%= @hospital.pharmacy_details %>
+</p>
+<p><b>Number Of Private Rooms:</b>
+	<%= @hospital.no_of_private_rooms %>
+</p>
+<p><b>Number of Wards:</b>
+	<%= @hospital.no_of_wards %>
+</p>
+<p><b>Specialities:</b>
+	<%= @hospital.specialities %>
+</p>
+<p><b>Doctor List:</b>
+	<%= @hospital.doctor_list %>
+</p>
+
+<p>
+  Rating <%= ratings_for @hospital %>
+</p>
+Your rating: <%= ratings_for @hospital, :force_static => true,  :small => true, :show_user_rating => true %>
+
+<% for rater in @hospital.raters(:speed) %>
+  <%= ratings_for @hospital, rater,  :show_user_rating => true %>
+<% end %>
+
+<%= render "enquiries/enq" , :object => @hospital %>

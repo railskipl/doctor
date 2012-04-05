@@ -1,0 +1,18 @@
+ <%= f.label      :allergic %><br />
+ <%= f.text_field :allergic %><br />
+
+ <%= f.label      :affect %><br />
+ <%= f.text_field :affect %><br />
+ 
+ <%= f.label       :started %><br />
+ <%= f.date_select :satrted %><br />
+ 
+ <%= f.label      :ended %><br />
+ <%= f.date_select       :ended %><br />
+ 
+ <%= f.label      :severity %><br />
+ <%= f.text_field :severity %><br />
+ 
+ <%= f.label      :journal_entry %><br />
+ <%= f.text_area  :journal_entry %><br />
+ <%= f.hidden_field :user_id, :value => current_user.id %>

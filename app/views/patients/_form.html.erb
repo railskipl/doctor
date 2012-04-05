@@ -1,0 +1,61 @@
+<%= nested_form_for @patient do |f| %>
+   
+   
+    <%= f.label      :name %><br />
+    <%= f.text_field :name %><br />
+     
+    <%= f.label      :phone %><br />
+    <%= f.text_field :phone %><br />
+     
+   <%= f.label       :address %><br />
+    <%= f.text_field :address_line_1 %><br />
+   <%= f.text_field  :address_line_2 %><br />
+   <%= f.text_field  :address_line_3 %><br />
+    
+    <%= f.label      :suffering_from %><br />
+    <%= f.text_field :suffering_from %><br />
+    
+    <%= f.hidden_field :user_id, :value => current_user.id %>   
+    
+    <h3> Have allergies?</h3>
+      <%= f.fields_for :allergies do |f| %>
+      <%= render :partial =>'allergy', :locals => { :f => f }%>
+      <% end %>
+     <p><%= f.link_to_add "Add an allergy here", :allergies %></p>
+     
+    <h3> Any Immunizations? </h3>
+      <%= f.fields_for :immunizations do |f| %>
+      <%= render :partial =>'immunization', :locals => { :f => f }%>
+      <% end %>
+    <p><%= f.link_to_add "Add an immunization", :immunizations %></p>
+    
+    <h3> Insured? </h3>
+      <%= f.fields_for :insurances do |f| %>
+      <%= render :partial =>'insurance', :locals => { :f => f }%>
+      <% end %>
+    <p><%= f.link_to_add "Add an insurance", :insurances %></p>
+    
+    <h3> Dealing with Problems?</h3>
+      <%= f.fields_for :problems do |f| %>
+      <%= render :partial =>'problem', :locals => { :f => f }%>
+      <% end %>
+    <p><%= f.link_to_add "Add a problem", :problems %></p>
+    
+    <h3> Procedures to go through:</h3>
+       <%= f.fields_for :procedures do |f| %>
+       <%= render :partial =>'procedure', :locals => { :f => f }%>
+       <% end %>
+    <p><%= f.link_to_add "Add a procedure", :procedures %></p>
+    <h3> Results or reports:</h3>
+       <%= f.fields_for :results do |f| %>
+       <%= render :partial =>'result', :locals => { :f => f }%>
+       <% end %>
+    <p><%= f.link_to_add "Add a result/report", :results %></p>
+    <h3> Medications Allotted:</h3>
+       <%= f.fields_for :medications do |f| %>
+       <%= render :partial =>'medication', :locals => { :f => f }%>
+       <% end %>
+    <p><%= f.link_to_add "Add a medication", :medications %></p>
+          
+    <%= f.submit "Create" %>
+<% end %> 

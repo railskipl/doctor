@@ -1,0 +1,54 @@
+<h1>Doctor <%= @vaidya.name %> (<%= @vaidya.qualification %>)</h1>
+<p><b>Name:</b>
+<%= @vaidya.name %>
+</p>
+<p><b>Address:</b>
+	<%= @vaidya.address_line_1 %></br>
+	<%= @vaidya.address_line_2 %></br>
+	<%= @vaidya.address_line_3 %></br>
+</p>
+<p><b>State:</b>
+<%= @vaidya.state %>
+</p>
+<p><b>City:</b>
+<%= @vaidya.city %>
+</p>
+<p><b>Country:</b>
+<%= @vaidya.country %>
+</p>
+<p><b>Contact Number:</b>
+<%= @vaidya.contact_no %>
+</p>
+<p><b>Fax Number</b>
+<%= @vaidya.fax_no %>
+</p>
+<p><b>Website URL:</b>
+<%= @vaidya.website_url %>
+</p>
+<p><b>Qualification:</b>
+<%= @vaidya.qualification %>
+</p>
+<p><b>Speciality:</b>
+<%= @vaidya.speciality %>
+</p>
+<p><b>Affiliation:</b>
+<%= @vaidya.affiliation %>
+</p>
+<p><b>Awards:</b>
+<%= @vaidya.awards %>
+</p>
+<p><b>Catagory:</b>
+	<%= @vaidya.categories_ds.first.name %>
+</p>
+<p>
+  Rating <%= ratings_for @vaidya %>
+</p>
+Your rating: <%= ratings_for @vaidya, :force_static => true,  :small => true, :show_user_rating => true %>
+
+<% for rater in @vaidya.raters(:speed) %>
+  <%= ratings_for @vaidya, rater,  :show_user_rating => true %>
+<% end %>
+
+
+
+<%= render "enquiries/enq" , :object => @vaidya %>

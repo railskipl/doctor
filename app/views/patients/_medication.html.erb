@@ -1,0 +1,28 @@
+ <%= f.label       :medication %><br />
+ <%= f.text_field  :medication %><br />
+ 
+ <%= f.label       :take_medi %><br />
+ <%= f.text_field  :take_medi %><br />
+ 
+ <%= f.label       :started %><br />
+ <%= f.date_select :started %><br />
+ 
+ <%= f.label       :ended %><br />
+ <%= f.date_select  :ended %><br />
+ 
+ <%= f.label       :route %><br />
+ <%= f.text_field  :route %><br />
+ 
+ <%= f.label       :strength %><br />
+ <%= f.text_field  :strength %><br />
+ 
+ <%= f.label       :how_many %><br />
+ <%= f.text_field  :how_many %><br />
+ 
+ <%= f.label       :how_often %><br />
+ <%= f.text_field  :how_often %><br />
+ 
+ <%= f.label       :journal_entry %><br />
+ <%= f.text_area   :journal_entry %><br />
+ 
+ <%= f.hidden_field :user_id, :value => current_user.id %>

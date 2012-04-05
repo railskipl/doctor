@@ -1,0 +1,13 @@
+ <%= f.label       :surgery %><br />
+ <%= f.text_field  :surgery %><br />
+ 
+ <%= f.label       :started %><br />
+ <%= f.date_select :started %><br />
+ 
+ <%= f.label       :ended %><br />
+ <%= f.date_select :ended %><br />
+
+ <%= f.label       :journal_entry %><br />
+ <%= f.text_area   :journal_entry %><br />
+ 
+ <%= f.hidden_field :user_id, :value => current_user.id %>
